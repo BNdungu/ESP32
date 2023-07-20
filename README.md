@@ -50,20 +50,20 @@ MicroPython is a lightweight implementation of the Python programming language o
 1. Open a terminal or command prompt on your computer.
 2. Install the `esptool` utility using pip (Python package manager):
     ``` python 
-        pip install esptool
+    pip install esptool
 
 ### Step 4: Erase Flash Memory (Optional but Recommended)
 
 1. To ensure a clean flash, erase the ESP32's flash memory by running the following command:
     ``` python 
-        esptool.py --chip esp32 erase_flash
+    esptool.py --chip esp32 erase_flash
 
 
 ### Step 5: Flash MicroPython Firmware
 
 1. Change the path in the command below to the location where you downloaded the MicroPython firmware:
     ``` python 
-        esptool.py --chip esp32 --port <port> write_flash -z 0x1000 <path_to_firmware>
+    esptool.py --chip esp32 --port <port> write_flash -z 0x1000 <path_to_firmware>
 
 
 - Replace `<port>` with the serial port of your ESP32 board (e.g., `COM1` on Windows, `/dev/ttyUSB0` on Linux).
