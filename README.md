@@ -18,11 +18,13 @@ Thonny IDE is a beginner-friendly Python Integrated Development Environment (IDE
 ### Step 3: Install Thonny
 
 1. Windows:
+
    - Double-click the downloaded installer (e.g., `thonny-3.3.7.exe`).
    - Follow the on-screen instructions to install Thonny.
    - Once the installation is complete, you should find Thonny in the Start menu.
 
 2. macOS:
+
    - Open the downloaded `.dmg` file (e.g., `thonny-3.3.7.dmg`).
    - Drag the Thonny icon into the Applications folder.
    - Thonny is now installed and available in your Applications folder.
@@ -45,38 +47,15 @@ MicroPython is a lightweight implementation of the Python programming language o
 
 1. Plug the ESP32 board into your computer using a USB cable. Make sure it is properly connected.
 
-### Step 3: Install esptool
+### Step 3: flash micropython
 
-1. Open a terminal or command prompt on your computer.
-2. Install the `esptool` utility using pip (Python package manager):
-    ``` python 
-    pip install esptool
-
-### Step 4: Erase Flash Memory (Optional but Recommended)
-
-1. To ensure a clean flash, erase the ESP32's flash memory by running the following command:
-    ``` python 
-    esptool.py --chip esp32 erase_flash
-
-
-### Step 5: Flash MicroPython Firmware
-
-1. Change the path in the command below to the location where you downloaded the MicroPython firmware:
-    ``` python 
-    esptool.py --chip esp32 --port <port> write_flash -z 0x1000 <path_to_firmware>
-
-
-- Replace `<port>` with the serial port of your ESP32 board (e.g., `COM1` on Windows, `/dev/ttyUSB0` on Linux).
-- `<path_to_firmware>` should be the path to the MicroPython firmware you downloaded.
-
-### Step 6: Access MicroPython REPL
-
-1. After flashing, unplug and re-plug the ESP32 board to reset it.
-2. Open Thonny IDE.
-3. Click on the "View" menu, then select "Shell" to open the Python Shell.
-4. In the Shell, select the correct serial port for the ESP32 board (e.g., `/dev/ttyUSB0`).
-5. Click the "Connect" button to access the MicroPython REPL (Read-Eval-Print Loop).
-
-You're now ready to start writing and running MicroPython code on your ESP32 using Thonny IDE!
-
-
+1. Start up thonny IDE.
+2. Click on tools.
+3. Options ...
+4. Click on the Interprator tab.
+5. On the section "Which interpreter or device should Thonny use for running the code" select "Micropython(ESP32)".
+6. In the "Port or WebREPL" section, select the port connected to you mounted ESP32 board.
+7. Click on "Install or update firmware".
+8. Select the usb port you ESP32 board is mounted at in the PORT section.
+9. In the firmware part click on browse to select the downloaded micropython file in your computer's Downloads folder.
+10. Check the Erase flash before installing check box and finnaly click on install.
