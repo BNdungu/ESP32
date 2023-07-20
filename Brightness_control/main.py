@@ -11,3 +11,4 @@ while True:
     for duty_cycle in range(1024, 0, -32):
         pwm.duty(duty_cycle)
         utime.sleep(0.1)
+
